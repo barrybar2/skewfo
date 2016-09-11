@@ -1,16 +1,22 @@
-img, iframe {
-
-			    width:500px; 
-			    height: 300px;
-			    position:relative;
+img, #skewFrame {
+				left: 28px;
+   				top: 38px;
+			    width:1500px; 
+			    height: 900px;
 			    display:block; 
 			    margin:auto;
 			    overflow:hidden;
 		        border-width: 0px;
+		        transform: scale(0.3181);
+    			-webkit-transform: scale(0.3181);
+    			transform-origin: top left;
+    			-webkit-transform-origin: top left;
    
 			}
 			#iframeWrapper {
 				background-image: url("../img/bg-1.jpg");
+			}
+			#iframeWrapper, #desktop {
 				width: 500px;
 				height: 300px;
 				margin: auto;
@@ -22,11 +28,13 @@ img, iframe {
 			.t_input {
 				width:135px;
 			}
-
 			div {
 				z-index:100;
-				background:coral;
 				position:fixed; 
+			}
+
+			#skewDiv, #scaleDiv {
+				background:coral;
 			}
 
 			#skewDiv {

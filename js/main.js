@@ -1,3 +1,4 @@
+	var difference = 0;
 	function alterSkew() {
 				sxVal  = document.getElementById("sx").value;
 				syVal  = document.getElementById("sy").value;
@@ -42,8 +43,8 @@
 				document.getElementById("i9").value = mxVal;
 				document.getElementById("i10").value = myVal;
 
-				document.getElementById("skewFrame").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
-				//document.getElementById("img1").style.transform = "";
+				document.getElementById("desktop").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
+				
 			}
 
 			function reset() {
