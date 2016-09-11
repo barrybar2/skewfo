@@ -10,7 +10,7 @@ img, iframe {
    
 			}
 			#iframeWrapper {
-				background-image: url("img/bg-1.jpg");
+				background-image: url("../img/bg-1.jpg");
 				width: 500px;
 				height: 300px;
 				margin: auto;
