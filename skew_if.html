@@ -6,12 +6,28 @@
 		<!--<script type="text/javascript" src="js/js.js"></script>-->
 
 		<style>
-			img {
+			img, iframe {
 				/*-ms-transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg); /* IE 9 */
 			   /* -webkit-transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg);*/ /* Safari */
 			   /* transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg);*/
 
-			    width:500px; position:relative; display:block; margin:auto;
+			    width:500px; 
+			    height: 300px;
+			    position:relative;
+			    display:block; 
+			    margin:auto;
+			    overflow:hidden;
+		        border-width: 0px;
+   
+			}
+			#iframeWrapper {
+				background-image: url("img/bg-1.jpg");
+				width: 500px;
+				height: 300px;
+				margin: auto;
+				display: block;
+				position: relative;
+
 			}
 
 			.t_input {
@@ -62,10 +78,8 @@
 		</style>
 
 		<script>
-
-			function alterSkew() {
-
-				// SKEW
+			
+				function alterSkew() {
 				sxVal  = document.getElementById("sx").value;
 				syVal  = document.getElementById("sy").value;
 				document.getElementById("i1").value = sxVal;
@@ -114,7 +128,8 @@
 
 
 
-				document.getElementById("img1").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
+
+				document.getElementById("skewFrame").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
 				//document.getElementById("img1").style.transform = "";
 			}
 
@@ -146,15 +161,23 @@
 				document.getElementById("img1").style.transform = "perspective(" + pxVal + "deg, " + pyVal + "deg)  rotate(" + bxVal + ", " + byVal + ")";
 				//document.getElementById("img1").style.transform = "";   transform: perspective(10px) rotateY(-1deg);
 			}*/
+			function inputIframe(){
+				var val, iframe;
+				iframe = document.getElementById("skewFrame");
+				val = document.getElementById('skewInput').value;
+				iframe.src = val;
+			}
 		</script>
 
 	</head>
 	<body style="overflow:hidden;">
 		<h1>View My Site</h1>
-
+		<input type="text" id="skewInput">
+		<input type="submit" value="submit" onclick="inputIframe()">
 		<br/>
-		<img id="img1" class="right left bottom top" src="my_site.jpg"/>
-
+		<div id="iframeWrapper">
+			<iframe id="skewFrame"></iframe>
+		</div>
 		<!-- TRANSLATE -->
 		<div id="translateDiv">
 			<!--<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
@@ -164,7 +187,6 @@
 			<br/>
 			<input id="i9" class="t_input"/><input id="i10" class="t_input"/>
 		</div>
-
 		<!-- PERSPECTIVE -->
 		<div id="perspectiveDiv">
 			<span>Perspective</span><span style="margin-left:48px;">Aspect</span><br/>
