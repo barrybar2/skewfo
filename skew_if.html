@@ -13,9 +13,14 @@
 		<input type="text" id="skewInput" value="http://jamesfinn.co">
 		<input type="submit" value="submit" onclick="inputIframe()">
 		<br/>
-		<div id="iframeWrapper">
-			<div id="desktop">
-				<iframe id="skewFrame"></iframe>
+		<form action="">
+		  <input type="radio" name="platform" value="desktop" checked="checked" onclick="setDesktop()"> Desktop
+		  <input type="radio" name="platform" value="mobile" onclick="setMobile()"> Mobile
+		  <input type="radio" name="platform" value="tablet" onclick="setTablet()"> Tablet
+		</form>		
+		<div id="platformWrapper">
+			<div id="iframeWrapper">
+				<iframe class="skewFrame" id="iframe-desktop"></iframe>
 			</div>
 		</div>
 

@@ -1,22 +1,35 @@
-img, #skewFrame {
+img, .skewFrame {
 				left: 28px;
    				top: 38px;
-			    width:1500px; 
-			    height: 900px;
 			    display:block; 
 			    margin:auto;
 			    overflow:hidden;
 		        border-width: 0px;
-		        transform: scale(0.3181);
-    			-webkit-transform: scale(0.3181);
     			transform-origin: top left;
     			-webkit-transform-origin: top left;
-   
 			}
-			#iframeWrapper {
+			#iframe-desktop{
+				width:1500px; 
+			    height: 900px;
+			    transform: scale(0.3181);
+    			-webkit-transform: scale(0.3181);
+			}
+			#iframe-tablet {
+				width:1200px; 
+			    height: 800px;
+			    transform: scale(0.3971);
+    			-webkit-transform: scale(0.277);
+			}
+			#iframe-mobile {
+				width:500px; 
+			    height: 300px;
+			    transform: scale(1);
+    			-webkit-transform: scale(1);
+			}
+			#platformWrapper {
 				background-image: url("../img/bg-1.jpg");
 			}
-			#iframeWrapper, #desktop {
+			#platformWrapper, #iframeWrapper {
 				width: 500px;
 				height: 300px;
 				margin: auto;
@@ -34,7 +47,7 @@ img, #skewFrame {
 			}
 
 			#skewDiv, #scaleDiv {
-				background:coral;
+				background:coral;	
 			}
 
 			#skewDiv {

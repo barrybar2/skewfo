@@ -43,8 +43,21 @@
 				document.getElementById("i9").value = mxVal;
 				document.getElementById("i10").value = myVal;
 
-				document.getElementById("desktop").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
 				
+				document.getElementById("iframeWrapper").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
+				
+			}
+
+			function setTablet() {
+				document.getElementsByClassName("skewFrame")[0].id = "iframe-tablet";
+			}
+
+			function setMobile() {
+				document.getElementsByClassName("skewFrame")[0].id = "iframe-mobile";
+			}
+
+			function setDesktop() {
+				document.getElementsByClassName("skewFrame")[0].id = "iframe-desktop";
 			}
 
 			function reset() {
@@ -67,7 +80,7 @@
 
 			function inputIframe(){
 				var val, iframe;
-				iframe = document.getElementById("skewFrame");
+				iframe = document.getElementsByClassName("skewFrame")[0];
 				val = document.getElementById('skewInput').value;
 				iframe.src = val;
 			}
