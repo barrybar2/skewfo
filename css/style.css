@@ -1,0 +1,50 @@
+img, iframe {
+
+			    width:500px; 
+			    height: 300px;
+			    position:relative;
+			    display:block; 
+			    margin:auto;
+			    overflow:hidden;
+		        border-width: 0px;
+   
+			}
+			#iframeWrapper {
+				background-image: url("img/bg-1.jpg");
+				width: 500px;
+				height: 300px;
+				margin: auto;
+				display: block;
+				position: relative;
+
+			}
+
+			.t_input {
+				width:135px;
+			}
+
+			div {
+				z-index:100;
+				background:coral;
+				position:fixed; 
+			}
+
+			#skewDiv {
+				bottom:0px; left:0px;
+			}
+			#scaleDiv {
+				bottom:0px; right:0px;
+			}
+			#perspectiveDiv {
+				background:lime;
+				bottom:70px; right:0px;
+			}
+			#rotateDiv {
+				background:lime;
+				bottom:70px; left:0px;
+			}
+			#translateDiv {
+				background:pink;
+				bottom:0px; left:50%; margin-left:-120px;
+			}
+			

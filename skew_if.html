@@ -1,177 +1,11 @@
 <doctype html>
 <html>
 	<head>
-		<!--<link rel="stylesheet" type="text/css" href="css/css.css">-->
 		<title>View my Site</title>
-		<!--<script type="text/javascript" src="js/js.js"></script>-->
 
-		<style>
-			img, iframe {
-				/*-ms-transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg); /* IE 9 */
-			   /* -webkit-transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg);*/ /* Safari */
-			   /* transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg);*/
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/main.js"></script>
 
-			    width:500px; 
-			    height: 300px;
-			    position:relative;
-			    display:block; 
-			    margin:auto;
-			    overflow:hidden;
-		        border-width: 0px;
-   
-			}
-			#iframeWrapper {
-				background-image: url("img/bg-1.jpg");
-				width: 500px;
-				height: 300px;
-				margin: auto;
-				display: block;
-				position: relative;
-
-			}
-
-			.t_input {
-				width:135px;
-			}
-
-			div {
-				z-index:100;
-				background:coral;
-				position:fixed; 
-			}
-
-			#skewDiv {
-				bottom:0px; left:0px;
-			}
-			#scaleDiv {
-				bottom:0px; right:0px;
-			}
-			#perspectiveDiv {
-				background:lime;
-				bottom:70px; right:0px;
-			}
-			#rotateDiv {
-				background:lime;
-				bottom:70px; left:0px;
-			}
-			#translateDiv {
-				background:pink;
-				bottom:0px; left:50%; margin-left:-120px;
-			}
-			#rotateZDiv {
-				background:lime;
-				bottom:70px; left:50%; margin-left:-60px;
-			}
-
-			/*#img1.bottom {
-				transform-origin: top;
-				transform: perspective(10px) rotateY(-2deg);
-			}
-			#img1.top {
-				transform-origin: bottom;
-				transform: perspective(10px) rotateY(-2deg);
-			}*/
-			#img1 {
-				/*transform-origin: right center;
-				transform: perspective(10px) rotateY(-1deg);*/
-			}
-			/*#img1.right {
-				transform-origin: left;
-				transform: perspective(10px) rotateX(-2deg);
-			}*/
-		</style>
-
-		<script>
-			
-				function alterSkew() {
-				sxVal  = document.getElementById("sx").value;
-				syVal  = document.getElementById("sy").value;
-				document.getElementById("i1").value = sxVal;
-				document.getElementById("i2").value = syVal;
-
-				// SCALE
-				// Do Not Preserve Aspect Ratio
-				if(!document.getElementById("aspectT").checked){
-					document.getElementById("by").disabled = false;
-					bxVal  = document.getElementById("bx").value/100;
-					byVal  = document.getElementById("by").value/100;
-					document.getElementById("i3").value = bxVal;
-					document.getElementById("i4").value = byVal;
-				}
-				// Preserve Aspect Ratio
-				else {
-					document.getElementById("by").disabled = true;
-
-					bxVal  = document.getElementById("bx").value/100;
-					byVal  = bxVal - difference;
-
-					document.getElementById("i3").value = bxVal;
-					document.getElementById("i4").value = byVal;
-				}
-
-				// PERSPECTIVE
-				pxVal  = document.getElementById("px").value;
-				//pyVal  = document.getElementById("py").value;
-				document.getElementById("i5").value = pxVal;
-				//document.getElementById("i6").value = pyVal;
-
-				// ROTATION
-				rxVal  = document.getElementById("rx").value;
-				ryVal  = document.getElementById("ry").value;
-				rzVal  = document.getElementById("rz").value;
-				document.getElementById("i7").value = rxVal;
-				document.getElementById("i8").value = ryVal;
-				document.getElementById("i11").value = rzVal;
-
-				// Translation MOVE
-				mxVal  = document.getElementById("mx").value;
-				myVal  = document.getElementById("my").value * -1;
-				document.getElementById("i9").value = mxVal;
-				document.getElementById("i10").value = myVal;
-
-
-
-
-				document.getElementById("skewFrame").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
-				//document.getElementById("img1").style.transform = "";
-			}
-
-			function reset() {
-				document.getElementById("sx").value = 0;
-				document.getElementById("sy").value = 0;
-				document.getElementById("rx").value = 0;
-				document.getElementById("ry").value = 0;
-				document.getElementById("rz").value = 0;
-				document.getElementById("px").value = 90;
-				document.getElementById("bx").value = 100;
-				document.getElementById("by").value = 100;
-				document.getElementById("mx").value = 0;
-				document.getElementById("my").value = 0;
-
-				alterSkew();
-			}
-
-			function aspectRatioChange() {
-				difference = bxVal - document.getElementById("by").value/100;
-			}
-
-			/*function alterPerspective() {
-				pxVal  = document.getElementById("px").value;
-				pyVal  = document.getElementById("py").value;
-				document.getElementById("i5").value = pxVal;
-				document.getElementById("i6").value = pyVal;
-
-
-				document.getElementById("img1").style.transform = "perspective(" + pxVal + "deg, " + pyVal + "deg)  rotate(" + bxVal + ", " + byVal + ")";
-				//document.getElementById("img1").style.transform = "";   transform: perspective(10px) rotateY(-1deg);
-			}*/
-			function inputIframe(){
-				var val, iframe;
-				iframe = document.getElementById("skewFrame");
-				val = document.getElementById('skewInput').value;
-				iframe.src = val;
-			}
-		</script>
 
 	</head>
 	<body style="overflow:hidden;">
@@ -195,7 +29,7 @@
 
 		<!-- TRANSLATE -->
 		<div id="translateDiv">
-			<!--<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
+			
 			<span>Move L & R</span><span style="margin-left:62px;">Move Up & Down</span><br/>
 			<input id="mx" onMouseMove="alterSkew()" type="range" value="0" min="-200" max="200"/>
 			<input id="my" onMouseMove="alterSkew()" type="range" value="0" min="-200" max="200"/>
@@ -214,7 +48,6 @@
 
 		<!-- ROTATE Y and X AXIS -->
 		<div id="rotateDiv">
-			<!--<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
 			<span>Rotate T & B</span><span style="margin-left:92px;">Rotate L & R</span><br/>
 			<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-20" max="20"/>
 			<input id="ry" onMouseMove="alterSkew()" type="range" value="0" min="-20" max="20"/>
