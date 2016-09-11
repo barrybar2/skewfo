@@ -1,0 +1,59 @@
+<doctype html>
+<html>
+	<head>
+		<title></title>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="css/unslider.css">
+		<link rel="stylesheet" href="css/unslider-dots.css">
+		
+		<style>
+			.my-slider {
+				height:420px;
+			}
+			.slider-wrapper {
+				position:relative;
+				display:block;
+				margin:auto;
+				width:500px;
+				margin-top:-300px;
+			}
+
+			.my-slider li > img{
+				width:500px;
+			}
+		</style>
+	</head>
+	<body style="background:grey;">
+		<h1>View My Site</h1>
+		<input type="text" id="skewInput" value="http://jamesfinn.co">
+		<input type="submit" value="submit" onclick="inputIframe()">
+		<br/>
+		<div id="iframeWrapper">
+			<div id="desktop">
+				<iframe id="skewFrame"></iframe>
+			</div>
+		</div>
+		<div class="slider-wrapper">
+			<div class="my-slider">
+				<ul>
+					<li><img src="img/bg-1.jpg" /></li>
+					<li><img src="img/dance-room.jpg" /></li>
+					<li><img src="img/bizplus.jpg" /></li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/unslider-min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script>
+			jQuery(document).ready(function($) {
+				$('.my-slider').unslider({
+					
+				});
+			});
+		</script>
+
+	</body>
+</html>
