@@ -58,6 +58,10 @@
 				background:pink;
 				bottom:0px; left:50%; margin-left:-120px;
 			}
+			#rotateZDiv {
+				background:lime;
+				bottom:70px; left:50%; margin-left:-60px;
+			}
 
 			/*#img1.bottom {
 				transform-origin: top;
@@ -99,9 +103,6 @@
 					document.getElementById("by").disabled = true;
 
 					bxVal  = document.getElementById("bx").value/100;
-					
-
-
 					byVal  = bxVal - difference;
 
 					document.getElementById("i3").value = bxVal;
@@ -117,8 +118,10 @@
 				// ROTATION
 				rxVal  = document.getElementById("rx").value;
 				ryVal  = document.getElementById("ry").value;
+				rzVal  = document.getElementById("rz").value;
 				document.getElementById("i7").value = rxVal;
 				document.getElementById("i8").value = ryVal;
+				document.getElementById("i11").value = rzVal;
 
 				// Translation MOVE
 				mxVal  = document.getElementById("mx").value;
@@ -129,7 +132,7 @@
 
 
 
-				document.getElementById("skewFrame").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
+				document.getElementById("skewFrame").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
 				//document.getElementById("img1").style.transform = "";
 			}
 
@@ -138,6 +141,7 @@
 				document.getElementById("sy").value = 0;
 				document.getElementById("rx").value = 0;
 				document.getElementById("ry").value = 0;
+				document.getElementById("rz").value = 0;
 				document.getElementById("px").value = 90;
 				document.getElementById("bx").value = 100;
 				document.getElementById("by").value = 100;
@@ -178,6 +182,17 @@
 		<div id="iframeWrapper">
 			<iframe id="skewFrame"></iframe>
 		</div>
+
+		<!-- ROTATE Z AXIS -->
+		<div id="rotateZDiv">
+			<!--<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
+			<span>Rotate Z</span><br/>
+			<input id="rz" onMouseMove="alterSkew()" type="range" value="0" min="-180" max="180"/>
+			<br/>
+			<input id="i11" class="t_input"/>
+		</div>
+
+
 		<!-- TRANSLATE -->
 		<div id="translateDiv">
 			<!--<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
@@ -197,7 +212,7 @@
 			<input id="i5" class="t_input"/><input id="i6" class="t_input"/>
 		</div>
 
-		<!-- ROTATE Y AXIS -->
+		<!-- ROTATE Y and X AXIS -->
 		<div id="rotateDiv">
 			<!--<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
 			<span>Rotate T & B</span><span style="margin-left:92px;">Rotate L & R</span><br/>
