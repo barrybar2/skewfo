@@ -6,12 +6,28 @@
 		<!--<script type="text/javascript" src="js/js.js"></script>-->
 
 		<style>
-			img {
+			img, iframe {
 				/*-ms-transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg); /* IE 9 */
 			   /* -webkit-transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg);*/ /* Safari */
 			   /* transform: skew(0deg, 0deg) scale(1,1) perspective(0px) rotateZ(0deg);*/
 
-			    width:500px; position:relative; display:block; margin:auto;
+			    width:500px; 
+			    height: 300px;
+			    position:relative;
+			    display:block; 
+			    margin:auto;
+			    overflow:hidden;
+		        border-width: 0px;
+   
+			}
+			#iframeWrapper {
+				background-image: url("img/bg-1.jpg");
+				width: 500px;
+				height: 300px;
+				margin: auto;
+				display: block;
+				position: relative;
+
 			}
 
 			.t_input {
@@ -58,13 +74,7 @@
 		</style>
 		<script src="html2canvas.js" type="text/javascript"></script>
 		<script>
-
-			function alterSkew() {
-				html2canvas(document.getElementById("img1"), {
-    onrendered: function(canvas) {
-        debugger;
-    }
-				});
+				function alterSkew() {
 				sxVal  = document.getElementById("sx").value;
 				syVal  = document.getElementById("sy").value;
 				document.getElementById("i1").value = sxVal;
@@ -86,7 +96,7 @@
 				document.getElementById("i8").value = ryVal;
 
 
-				document.getElementById("img1").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg)";
+				document.getElementById("skewFrame").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg)";
 				//document.getElementById("img1").style.transform = "";
 			}
 
@@ -100,15 +110,25 @@
 				document.getElementById("img1").style.transform = "perspective(" + pxVal + "deg, " + pyVal + "deg)  rotate(" + bxVal + ", " + byVal + ")";
 				//document.getElementById("img1").style.transform = "";   transform: perspective(10px) rotateY(-1deg);
 			}
+
+			function inputIframe(){
+				var val, iframe;
+				iframe = document.getElementById("skewFrame");
+				val = document.getElementById('skewInput').value;
+				iframe.src = val;
+			}
 		</script>
 
 	</head>
 	<body>
-		<h1>View My Site</h1>
-
+		<h1>V</h1>
+		<input type="text" id="skewInput">
+		<input type="submit" value="submit" onclick="inputIframe()">
 		<br/>
-		<img id="img1" class="right left bottom top" src="my_site.jpg"/>
-
+		<!--	<img id="img1" class="right left bottom top" src="my_site.jpg"/>-->
+		<div id="iframeWrapper">
+			<iframe id="skewFrame"></iframe>
+		</div>
 		<div id="perspectiveDiv">
 			<input id="px" onMouseMove="alterSkew()" type="range" value="0" min="-150" max="150"/>
 			<!--<input id="py" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
