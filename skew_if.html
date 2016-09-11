@@ -4,18 +4,31 @@
 		<title>View my Site</title>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script type="text/javascript" src="js/main.js"></script>
+		<link rel="stylesheet" href="css/unslider.css">
+		<link rel="stylesheet" href="css/unslider-dots.css">
+		
 
 
 	</head>
-	<body style="overflow:hidden;">
+	<body style="overflow:hidden; background:grey;" >
 		<h1>View My Site</h1>
-		<input type="text" id="skewInput" value="http://jamesfinn.co">
+		<input type="text" id="skewInput" value="http://bwmedia.me">
 		<input type="submit" value="submit" onclick="inputIframe()">
 		<br/>
 		<div id="iframeWrapper">
 			<div id="desktop">
 				<iframe id="skewFrame"></iframe>
+			</div>
+		</div>
+
+		<!-- SLider -->
+		<div class="slider-wrapper">
+			<div class="my-slider">
+				<ul>
+					<li><img src="img/bg-1.jpg" /></li>
+					<li><img src="img/dance-room.jpg" /></li>
+					<li><img src="img/bizplus.jpg" /></li>
+				</ul>
 			</div>
 		</div>
 
@@ -76,5 +89,9 @@
 			<input id="i3" class="t_input"/><input id="i4" class="t_input"/>
 		</div>
 	 
+	 	<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/unslider-min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
 	</body>
 </html>

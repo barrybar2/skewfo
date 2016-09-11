@@ -71,3 +71,11 @@
 				val = document.getElementById('skewInput').value;
 				iframe.src = val;
 			}
+
+
+			// Slider
+			jQuery(document).ready(function($) {
+				$('.my-slider').unslider({
+					
+				});
+			});

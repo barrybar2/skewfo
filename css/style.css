@@ -1,4 +1,4 @@
-img, #skewFrame {
+#skewFrame {
 				left: 28px;
    				top: 38px;
 			    width:1500px; 
@@ -14,7 +14,8 @@ img, #skewFrame {
    
 			}
 			#iframeWrapper {
-				background-image: url("../img/bg-1.jpg");
+				/*background-image: url("../img/bg-1.jpg");*/
+				z-index:999;
 			}
 			#iframeWrapper, #desktop {
 				width: 500px;
@@ -30,33 +31,51 @@ img, #skewFrame {
 			}
 			div {
 				z-index:100;
-				position:fixed; 
+				/*position:fixed; */
 			}
 
 			#skewDiv, #scaleDiv {
-				background:coral;
+				background:coral; position:fixed;
 			}
 
 			#skewDiv {
-				bottom:0px; left:0px;
+				bottom:0px; left:0px;  position:fixed;
 			}
 			#scaleDiv {
-				bottom:0px; right:0px;
+				bottom:0px; right:0px;  position:fixed;
 			}
 			#perspectiveDiv {
 				background:lime;
-				bottom:70px; right:0px;
+				bottom:70px; right:0px;  position:fixed;
 			}
 			#rotateDiv {
 				background:lime;
-				bottom:70px; left:0px;
+				bottom:70px; left:0px;  position:fixed;
 			}
 			#translateDiv {
-				background:pink;
+				background:pink;  position:fixed;
 				bottom:0px; left:50%; margin-left:-120px;
 			}
 			#rotateZDiv {
-				background:lime;
+				background:lime;  position:fixed;
 				bottom:70px; left:50%; margin-left:-60px;
+			}
+
+			/*
+			Slider
+			*/
+			.my-slider {
+				height:420px;
+			}
+			.slider-wrapper {
+				position:relative;
+				display:block;
+				margin:auto;
+				width:500px;
+				margin-top:-300px;
+			}
+
+			.my-slider li > img{
+				width:500px;
 			}
 			
