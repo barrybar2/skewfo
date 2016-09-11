@@ -18,10 +18,7 @@
 					document.getElementById("by").disabled = true;
 
 					bxVal  = document.getElementById("bx").value/100;
-					
-
-
-					byVal  = bxVal - difference;
+										byVal  = bxVal - difference;
 
 					document.getElementById("i3").value = bxVal;
 					document.getElementById("i4").value = byVal;
@@ -34,8 +31,10 @@
 				// ROTATION
 				rxVal  = document.getElementById("rx").value;
 				ryVal  = document.getElementById("ry").value;
+				rzVal  = document.getElementById("rz").value;
 				document.getElementById("i7").value = rxVal;
 				document.getElementById("i8").value = ryVal;
+				document.getElementById("i11").value = rzVal;
 
 				// Translation MOVE
 				mxVal  = document.getElementById("mx").value;
@@ -43,10 +42,7 @@
 				document.getElementById("i9").value = mxVal;
 				document.getElementById("i10").value = myVal;
 
-
-
-
-				document.getElementById("skewFrame").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
+				document.getElementById("skewFrame").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
 				//document.getElementById("img1").style.transform = "";
 			}
 

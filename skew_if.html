@@ -31,6 +31,7 @@
 		<div id="translateDiv">
 			
 			<span>Move L and R</span><span style="margin-left:62px;">Move Up & Down</span><br/>
+
 			<input id="mx" onMouseMove="alterSkew()" type="range" value="0" min="-200" max="200"/>
 			<input id="my" onMouseMove="alterSkew()" type="range" value="0" min="-200" max="200"/>
 			<br/>
@@ -40,7 +41,7 @@
 		<div id="perspectiveDiv">
 			<span>Perspective</span><span style="margin-left:48px;">Aspect</span><br/>
 			<input id="px" onMouseMove="alterSkew()" type="range" value="90" min="0" max="90"/>
-			<input id="aspectT" onChange="aspectRatioChange()" type="checkbox"/>
+			<input id="aspectT" onChange="aspectRatioChange()" type="checkbox" checked/>
 			<button onClick="reset()">Reset</button>
 			<br/>
 			<input id="i5" class="t_input"/><input id="i6" class="t_input"/>
