@@ -2,8 +2,10 @@
 <html>
 	<head>
 		<title>View my Site</title>
+
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="js/main.js"></script>
+
 
 	</head>
 	<body style="overflow:hidden;">
@@ -14,6 +16,17 @@
 		<div id="iframeWrapper">
 			<iframe id="skewFrame"></iframe>
 		</div>
+
+		<!-- ROTATE Z AXIS -->
+		<div id="rotateZDiv">
+			<!--<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
+			<span>Rotate Z</span><br/>
+			<input id="rz" onMouseMove="alterSkew()" type="range" value="0" min="-180" max="180"/>
+			<br/>
+			<input id="i11" class="t_input"/>
+		</div>
+
+
 		<!-- TRANSLATE -->
 		<div id="translateDiv">
 			
@@ -33,7 +46,7 @@
 			<input id="i5" class="t_input"/><input id="i6" class="t_input"/>
 		</div>
 
-		<!-- ROTATE Y AXIS -->
+		<!-- ROTATE Y and X AXIS -->
 		<div id="rotateDiv">
 			<span>Rotate T & B</span><span style="margin-left:92px;">Rotate L & R</span><br/>
 			<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-20" max="20"/>
