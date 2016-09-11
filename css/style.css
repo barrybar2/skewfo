@@ -47,4 +47,8 @@ img, iframe {
 				background:pink;
 				bottom:0px; left:50%; margin-left:-120px;
 			}
+			#rotateZDiv {
+				background:lime;
+				bottom:70px; left:50%; margin-left:-60px;
+			}
 			
