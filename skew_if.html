@@ -6,19 +6,26 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" href="css/unslider.css">
 		<link rel="stylesheet" href="css/unslider-dots.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
 		
 
 
 	</head>
 	<body style="overflow:hidden; background:grey;" >
+		<div class="grid">
+			<div class="grid-item"></div>
+			<div class="grid-item"></div>
+			<div class="grid-item"></div>
+		</div>
 		<h1>View My Site</h1>
 		<input type="text" id="skewInput" value="http://bwmedia.me">
-		<input type="submit" value="submit" onclick="inputIframe()">
+		<input type="submit" value="submit" onclick="skewfo.inputIframe()">
 		<br/>
 		<form action="">
-		  <input type="radio" name="platform" value="desktop" checked="checked" onclick="setDesktop()"> Desktop
-		  <input type="radio" name="platform" value="mobile" onclick="setMobile()"> Mobile
-		  <input type="radio" name="platform" value="tablet" onclick="setTablet()"> Tablet
+		  <input type="radio" name="platform" value="desktop" checked="checked" onclick="skewfo.setDesktop()"> Desktop
+		  <input type="radio" name="platform" value="mobile" onclick="skewfo.setMobile()"> Mobile
+		  <input type="radio" name="platform" value="tablet" onclick="skewfo.setTablet()"> Tablet
 		</form>		
 		<div id="platformWrapper">
 			<div id="iframeWrapper">
@@ -39,9 +46,9 @@
 
 		<!-- ROTATE Z AXIS -->
 		<div id="rotateZDiv">
-			<!--<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-2" max="2"/>-->
+			<!--<input id="rx" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-2" max="2"/>-->
 			<span>Rotate Z</span><br/>
-			<input id="rz" onMouseMove="alterSkew()" type="range" value="0" min="-180" max="180"/>
+			<input id="rz" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-180" max="180"/>
 			<br/>
 			<input id="i11" class="t_input"/>
 		</div>
@@ -52,17 +59,17 @@
 			
 			<span>Move L and R</span><span style="margin-left:62px;">Move Up & Down</span><br/>
 
-			<input id="mx" onMouseMove="alterSkew()" type="range" value="0" min="-200" max="200"/>
-			<input id="my" onMouseMove="alterSkew()" type="range" value="0" min="-200" max="200"/>
+			<input id="mx" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-200" max="200"/>
+			<input id="my" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-200" max="200"/>
 			<br/>
 			<input id="i9" class="t_input"/><input id="i10" class="t_input"/>
 		</div>
 		<!-- PERSPECTIVE -->
 		<div id="perspectiveDiv">
 			<span>Perspective</span><span style="margin-left:48px;">Aspect</span><br/>
-			<input id="px" onMouseMove="alterSkew()" type="range" value="90" min="0" max="90"/>
-			<input id="aspectT" onChange="aspectRatioChange()" type="checkbox" checked/>
-			<button onClick="reset()">Reset</button>
+			<input id="px" onMouseMove="skewfo.alterSkew()" type="range" value="90" min="0" max="90"/>
+			<input id="aspectT" onChange="skewfo.aspectRatioChange()" type="checkbox" checked/>
+			<button onClick="skewfo.reset()">Reset</button>
 			<br/>
 			<input id="i5" class="t_input"/><input id="i6" class="t_input"/>
 		</div>
@@ -70,8 +77,8 @@
 		<!-- ROTATE Y and X AXIS -->
 		<div id="rotateDiv">
 			<span>Rotate T & B</span><span style="margin-left:92px;">Rotate L & R</span><br/>
-			<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-20" max="20"/>
-			<input id="ry" onMouseMove="alterSkew()" type="range" value="0" min="-20" max="20"/>
+			<input id="rx" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-20" max="20"/>
+			<input id="ry" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-20" max="20"/>
 			<br/>
 			<input id="i7" class="t_input"/><input id="i8" class="t_input"/>
 		</div>
@@ -79,8 +86,8 @@
 		<!-- SKEW INTERFACE -->
 		<div id="skewDiv">
 			<span>Skew L & R</span><span style="margin-left:62px;">Skew Up & Down</span><br/>
-			<input id="sx" onMouseMove="alterSkew()" type="range" value="0" min="-45" max="45"/>
-			<input id="sy" onMouseMove="alterSkew()" type="range" value="0" min="-45" max="45"/>
+			<input id="sx" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-45" max="45"/>
+			<input id="sy" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-45" max="45"/>
 			<br/>
 			<input id="i1" class="t_input"/><input id="i2" class="t_input"/>
 		</div>
@@ -88,8 +95,8 @@
 		<!-- SCALE INTERFACE -->
 		<div id="scaleDiv">
 			<span>Scale W</span><span style="margin-left:92px;">Scale H</span><br/>
-			<input id="bx" onMouseMove="alterSkew()" type="range" value="100" min="1" max="200"/>
-			<input id="by" onMouseMove="alterSkew()" type="range" value="100" min="1" max="200"/>
+			<input id="bx" onMouseMove="skewfo.alterSkew()" type="range" value="100" min="1" max="200"/>
+			<input id="by" onMouseMove="skewfo.alterSkew()" type="range" value="100" min="1" max="200"/>
 			<br/>
 			<input id="i3" class="t_input"/><input id="i4" class="t_input"/>
 		</div>
