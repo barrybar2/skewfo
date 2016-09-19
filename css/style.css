@@ -22,10 +22,10 @@ img, .skewFrame {
     			-webkit-transform: scale(0.277);
 			}
 			#iframe-mobile {
-				width:500px; 
-			    height: 300px;
-			    transform: scale(1);
-    			-webkit-transform: scale(1);
+				width:400px; 
+			    height: 600px;
+			    transform: scale(0.5);
+    			-webkit-transform: scale(0.5);
 			}
 			#platformWrapper {
 				z-index:999;
