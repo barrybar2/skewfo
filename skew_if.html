@@ -40,7 +40,7 @@
 			<span>Rotate Z</span><br/>
 			<input id="rz" onMouseMove="alterSkew()" type="range" value="0" min="-180" max="180"/>
 			<br/>
-			<input id="i11" class="t_input"/>
+			<input id="i11" class="t_input" onChange="typeIntoInput()"/>
 		</div>
 
 
@@ -52,7 +52,7 @@
 			<input id="mx" onMouseMove="alterSkew()" type="range" value="0" min="-200" max="200"/>
 			<input id="my" onMouseMove="alterSkew()" type="range" value="0" min="-200" max="200"/>
 			<br/>
-			<input id="i9" class="t_input"/><input id="i10" class="t_input"/>
+			<input id="i9" class="t_input" onChange="typeIntoInput()"/><input id="i10" class="t_input" onChange="typeIntoInput()"/>
 		</div>
 		<!-- PERSPECTIVE -->
 		<div id="perspectiveDiv">
@@ -61,7 +61,7 @@
 			<input id="aspectT" onChange="aspectRatioChange()" type="checkbox" checked/>
 			<button onClick="reset()">Reset</button>
 			<br/>
-			<input id="i5" class="t_input"/><input id="i6" class="t_input"/>
+			<input id="i5" class="t_input" onChange="typeIntoInput()"/><input id="i6" class="t_input" onChange="typeIntoInput()"/>
 		</div>
 
 		<!-- ROTATE Y and X AXIS -->
@@ -70,7 +70,7 @@
 			<input id="rx" onMouseMove="alterSkew()" type="range" value="0" min="-20" max="20"/>
 			<input id="ry" onMouseMove="alterSkew()" type="range" value="0" min="-20" max="20"/>
 			<br/>
-			<input id="i7" class="t_input"/><input id="i8" class="t_input"/>
+			<input id="i7" class="t_input" onChange="typeIntoInput()"/><input id="i8" class="t_input" onChange="typeIntoInput()"/>
 		</div>
 
 		<!-- SKEW INTERFACE -->
@@ -79,7 +79,7 @@
 			<input id="sx" onMouseMove="alterSkew()" type="range" value="0" min="-45" max="45"/>
 			<input id="sy" onMouseMove="alterSkew()" type="range" value="0" min="-45" max="45"/>
 			<br/>
-			<input id="i1" class="t_input"/><input id="i2" class="t_input"/>
+			<input id="i1" class="t_input" onChange="typeIntoInput()"/><input id="i2" class="t_input" onChange="typeIntoInput()"/>
 		</div>
 
 		<!-- SCALE INTERFACE -->
@@ -88,7 +88,7 @@
 			<input id="bx" onMouseMove="alterSkew()" type="range" value="100" min="1" max="200"/>
 			<input id="by" onMouseMove="alterSkew()" type="range" value="100" min="1" max="200"/>
 			<br/>
-			<input id="i3" class="t_input"/><input id="i4" class="t_input"/>
+			<input id="i3" class="t_input" onChange="typeIntoInput()"/><input id="i4" class="t_input" onChange="typeIntoInput()"/>
 		</div>
 	 
 	 	<script src="js/jquery-3.1.0.min.js"></script>

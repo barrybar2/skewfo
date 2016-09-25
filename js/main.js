@@ -1,4 +1,5 @@
 	var difference = 0;
+
 	function alterSkew() {
 				sxVal  = document.getElementById("sx").value;
 				syVal  = document.getElementById("sy").value;
@@ -44,9 +45,36 @@
 				document.getElementById("i10").value = myVal;
 
 				
-				document.getElementById("iframeWrapper").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
-				
+				//document.getElementById("iframeWrapper").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + bxVal + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
+				effectIFrame(sxVal, syVal, bxVal, byVal, pxVal, ryVal, rxVal, rzVal, mxVal, myVal);
 			}
+
+			function typeIntoInput() {
+				sxVal  = document.getElementById("sx").value;
+				syVal  = document.getElementById("sy").value;
+
+				if(!document.getElementById("aspectT").checked){
+					bxVal  = document.getElementById("bx").value/100;
+					byVal  = document.getElementById("by").value/100;
+				}
+				else {
+					bxVal  = document.getElementById("bx").value/100;
+					byVal  = bxVal - difference;
+				}
+
+				pxVal  = document.getElementById("px").value;
+				rxVal  = document.getElementById("rx").value;
+				ryVal  = document.getElementById("ry").value;
+				rzVal  = document.getElementById("rz").value;
+				mxVal  = document.getElementById("mx").value;
+				myVal  = document.getElementById("my").value * -1;
+				effectIFrame(sxVal, syVal, bxVal, byVal, pxVal, ryVal, rxVal, rzVal, mxVal, myVal);
+			}
+
+			function effectIFrame(sxV, syV, bxV, byV, pxV, ryV, rxV, rzV, mxV, myV) {
+				document.getElementById("iframeWrapper").style.transform = "skew(" + sxV + "deg, " + syV + "deg) scale(" + bxV + ", " + byV + ")" + " perspective(" + pxV + "px)  rotateY(" + ryV + "deg) rotateX(" + rxV + "deg) rotateZ(" + rzV + "deg) translateX("+ mxV +"px) translateY("+ myV +"px)";
+			}
+
 
 			function setTablet() {
 				document.getElementsByClassName("skewFrame")[0].id = "iframe-tablet";
