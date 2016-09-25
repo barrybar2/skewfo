@@ -1,23 +1,23 @@
 var skewfo = {
 	difference : {
 		value: 0,
-		getValue: function(){
+		getValue: function() {
 			return this.value;
 		},
-		setValue: function(setValue){
+		setValue: function(setValue) {
 			this.value = setValue;
 		}
 	},
 	bxVal :{
 		value: 0,
-		getValue: function(){
+		getValue: function() {
 			return this.value;
 		},
 		setValue: function(setValue){
 			this.value = setValue;
 		}
 	},
-	alterSkew: function(){
+	alterSkew: function() {
 		var sxVal, syVal, byVal, pxVal, rxVal, ryVal, rzVal, mxVal, myVal;
 		sxVal  = document.getElementById("sx").value;
 		syVal  = document.getElementById("sy").value;
@@ -72,7 +72,7 @@ var skewfo = {
 	setMobile: function() {
 		document.getElementsByClassName("skewFrame")[0].id = "iframe-mobile";
 	},
-	setDesktop: function(){
+	setDesktop: function() {
 		document.getElementsByClassName("skewFrame")[0].id = "iframe-desktop";
 	},
 	reset: function() {
@@ -88,10 +88,10 @@ var skewfo = {
 
 		this.alterSkew();
 	},
-	aspectRatioChange: function(){
+	aspectRatioChange: function() {
 		this.difference.setValue(this.bxVal.getValue() - document.getElementById("by").value/100); 
 	},
-	inputIframe: function(){
+	inputIframe: function() {
 		var val, iframe;
 			iframe = document.getElementsByClassName("skewFrame")[0];
 			val = document.getElementById('skewInput').value;
