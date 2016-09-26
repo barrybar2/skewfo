@@ -1,4 +1,5 @@
 var skewfo = {
+	websites: [],
 	difference : {
 		value: 0,
 		getValue: function() {
@@ -121,14 +122,37 @@ var skewfo = {
 			iframe = document.getElementsByClassName("skewFrame")[0];
 			val = document.getElementById('skewInput').value;
 			iframe.src = val;
+	},
+	bindWebsites: function(){
+		var websitelistBinding = websitelistBinding || {};
+			var model = {
+				websites: {
+					items: this.websites
+				}
+			};
+			websitelistBinding = rivets.bind($('.websitesInserted'), model);
+			this.bindEvents();
+	},
+	bindEvents: function() {
+		$('.delete-button').click(function() {
+			console.log('here');
+		});
+	},
+	submitWebsite: function(){
+		var picker, imageSource, url;
+				url = $('#websiteInput')[0].value;
+	        	picker = $("select").data('picker').picker;
+	        	imageSource = picker.find('.selected')[0].children[0].getAttribute("src");
+	        	website = new this.websiteObject(url, imageSource);
+	        	this.websites.push(website);
+	        	$('#myModal').modal('hide');
+	},
+	websiteObject: function(url, img){
+		this.url = url;
+		this.img = img;
 	}
 
 };
 
-	// Slider
-	jQuery(document).ready(function($) {
-		$('.my-slider').unslider({
-			
-		});
-	});
 
+	

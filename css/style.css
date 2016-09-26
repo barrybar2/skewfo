@@ -65,10 +65,6 @@ img, .skewFrame {
 			.t_input {
 				width:85px;
 			}
-			div {
-				z-index:100;
-				/*position:fixed; */
-			}
 
 			#skewDiv, #scaleDiv {
 				background:coral; 
@@ -114,5 +110,29 @@ img, .skewFrame {
 
 			.my-slider li > img{
 				width:386px;
+			}
+
+			/*
+			 * Modal and template
+			 */
+			#modalForm {
+				padding: 1.5rem;
+			}
+			.item img {
+				max-width: 100%
+			}
+			.item {
+				position: relative;
+				margin: 10px;
+			}
+			.iframeWindow {
+				position: absolute;
+				top: 53px;
+    			left: 60px;
+			}
+			.delete-button {
+				position: absolute;
+				top: 0;
+				right: 0;
 			}
 			
