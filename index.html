@@ -5,16 +5,34 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" href="css/unslider.css">
-		<link rel="stylesheet" href="css/unslider-dots.css">
+		<link rel="stylesheet" type="text/css" href="css/image-picker.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="js/rivets.bundled.min.js"></script>
+		<script src="js/image-picker.min.js"></script>
 
 	</head>
-	<body style="overflow:hidden; background:grey;" >
-	 	<!-- Trigger the modal with a button -->
-	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add website</button>
+	<body  >
+	<!-- Rivets data template here -->
+	<div class="grid-wrapper websitesInserted container">
+		<div class="row">
+			<div rv-each-item="websites.items">
+				<div class ="itemWrapper col-sm-4">
+					<div class="item">
+						<img rv-src="item.img">
+						<div class="delete-button"> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></div>
+						<div class="iframeWindow">
+							<iframe rv-src="item.url" class="skewFrame" id="iframe-desktop"></iframe>
+						</div>	
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add website</button>
+	</div>
+	<!-- Trigger the modal with a button -->
+	
 
 	<!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog">
@@ -26,18 +44,31 @@
 	        <button type="button" class="close" data-dismiss="modal">&times;</button>
 	        <h4 class="modal-title">Insert your website</h4>
 	      </div>
+
 	      <div class="modal-body">
-	        <p>Some text in the modal.</p>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      <div id="modalForm">
+			      <form id="websiteAdd" action="javascript:skewfo.submitWebsite()">
+			      <!-- select button to insert website -->
+		      	 	<div class="form-group">
+					    <label for="websiteInput">Website Address</label>
+					    <input type="text" class="form-control" id="websiteInput" aria-describedby="websiteHelp" placeholder="Enter website">
+					    <small id="websiteHelp" class="form-text text-muted">For example, http://bwmedia.me </small>
+				  	</div>
+				  	<select class="image-picker show-html">
+					  <option value=""></option>
+					  <option data-img-src="img/hamptons.jpg" value="1">Cute Kitten 1</option>
+					  <option data-img-src="img/bizplus.jpg" value="2">Cute Kitten 2</option>
+					  <option data-img-src="img/yoshi.jpg" value="3">Cute Kitten 3</option>
+					</select>
+			      <button type="submit" class="btn btn-primary">Submit</button>
+			      </form>
+		      </div>
 	      </div>
 	    </div>
 
 	  </div>
 	</div>
-	 	<script src="js/jquery-3.1.0.min.js"></script>
-		<script src="js/unslider-min.js"></script>
+
 		<script type="text/javascript" src="js/main.js"></script>
 
 	</body>

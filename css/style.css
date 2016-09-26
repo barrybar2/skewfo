@@ -12,8 +12,8 @@ img, .skewFrame {
 			#iframe-desktop{
 				width:1500px; 
 			    height: 900px;
-			    transform: scale(0.3181);
-    			-webkit-transform: scale(0.3181);
+			    transform: scale(0.1181);
+    			-webkit-transform: scale(0.1181);
 			}
 			#iframe-tablet {
 				width:1200px; 
@@ -41,10 +41,6 @@ img, .skewFrame {
 
 			.t_input {
 				width:135px;
-			}
-			div {
-				z-index:100;
-				/*position:fixed; */
 			}
 
 			#skewDiv, #scaleDiv {
@@ -91,5 +87,29 @@ img, .skewFrame {
 
 			.my-slider li > img{
 				width:500px;
+			}
+
+			/*
+			 * Modal and template
+			 */
+			#modalForm {
+				padding: 1.5rem;
+			}
+			.item img {
+				max-width: 100%
+			}
+			.item {
+				position: relative;
+				margin: 10px;
+			}
+			.iframeWindow {
+				position: absolute;
+				top: 53px;
+    			left: 60px;
+			}
+			.delete-button {
+				position: absolute;
+				top: 0;
+				right: 0;
 			}
 			
