@@ -154,19 +154,5 @@ var skewfo = {
 
 };
 
-$(document).ready(function () {           
-            $("select").imagepicker({
-	          hide_select : true,
-	          selected: function(option){
-		        var values = this.val();
-		        $("select").data('picker').sync_picker_with_select();
-		    }
-	        });
-	        skewfo.bindWebsites();
-        });
-	// Slider
-	jQuery(document).ready(function($) {
-		$('.my-slider').unslider({
-			
-		});
-	});
+
+	

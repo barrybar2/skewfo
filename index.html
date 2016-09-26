@@ -10,6 +10,21 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="js/rivets.bundled.min.js"></script>
 		<script src="js/image-picker.min.js"></script>
+		<script>
+			$(document).ready(function () { 
+			if(("select").length > 0) {
+				$("select").imagepicker({
+		          hide_select : true,
+		          selected: function(option){
+			        var values = this.val();
+			        $("select").data('picker').sync_picker_with_select();
+			    }
+		        });
+		        skewfo.bindWebsites();
+			}        
+            
+        });
+		</script>
 
 	</head>
 	<body  >
