@@ -18,8 +18,24 @@ var skewfo = {
 			this.value = setValue;
 		}
 	},
+	adjustOne: function(upOrDown, input, slider) {
+		// rz, i11
+		var inp = parseInt(document.getElementById(input).value);
+		var sli = parseInt(document.getElementById(slider).value);
+
+		if(upOrDown == "+") {
+			inp += 1; sli += 1;
+		}
+		else {
+			inp -= 1; sli -= 1;
+		}
+
+		document.getElementById(input).value = inp;
+		document.getElementById(slider).value = sli;
+		this.alterSkew();
+	},
 	alterSkew: function() {
-		var sxVal, syVal, byVal, pxVal, rxVal, ryVal, rzVal, mxVal, myVal;
+		var sxVal, syVal, byVal, pxVal, rxVal, ryVal, rzVal, mxVal, myVal, opVal;
 		sxVal  = document.getElementById("sx").value;
 		syVal  = document.getElementById("sy").value;
 		document.getElementById("i1").value = sxVal;
@@ -63,6 +79,14 @@ var skewfo = {
 		document.getElementById("i9").value = mxVal;
 		document.getElementById("i10").value = myVal;
 
+		// OPACITY
+		opVal = document.getElementById("op").value;
+		$(".skewFrame").css("opacity", opVal/100);
+		document.getElementById("i12").value = opVal;
+		/*document.getElementsByClassName("skewFrame")[0].style.opacity = opVal;
+		document.getElementsByClassName("skewFrame")[1].style.opacity = opVal;
+		document.getElementsByClassName("skewFrame")[2].style.opacity = opVal;*/
+
 		
 		document.getElementById("iframeWrapper").style.transform = "skew(" + sxVal + "deg, " + syVal + "deg) scale(" + this.bxVal.getValue() + ", " + byVal + ")" + " perspective(" + pxVal + "px)  rotateY(" + ryVal + "deg) rotateX(" + rxVal + "deg) rotateZ(" + rzVal + "deg) translateX("+ mxVal +"px) translateY("+ myVal +"px)";
 		
@@ -81,6 +105,7 @@ var skewfo = {
 		document.getElementById("sy").value = 0;
 		document.getElementById("rx").value = 0;
 		document.getElementById("ry").value = 0;
+		document.getElementById("rz").value = 0;
 		document.getElementById("px").value = 90;
 		document.getElementById("bx").value = 100;
 		document.getElementById("by").value = 100;
@@ -139,3 +164,9 @@ $(document).ready(function () {
 	        });
 	        skewfo.bindWebsites();
         });
+	// Slider
+	jQuery(document).ready(function($) {
+		$('.my-slider').unslider({
+			
+		});
+	});

@@ -40,7 +40,7 @@ img, .skewFrame {
 			}
 
 			.t_input {
-				width:135px;
+				width:85px;
 			}
 
 			#skewDiv, #scaleDiv {
@@ -64,7 +64,7 @@ img, .skewFrame {
 			}
 			#translateDiv {
 				background:pink;  position:fixed;
-				bottom:0px; left:50%; margin-left:-120px;
+				bottom:0px; left:50%; margin-left:-60px;
 			}
 			#rotateZDiv {
 				background:lime;  position:fixed;
