@@ -10,23 +10,46 @@ img, .skewFrame {
 			}
 			.grid-item { width: 200px; }
 			#iframe-desktop{
-				width:1500px; 
-			    height: 900px;
-			    transform: scale(0.3181);
-    			-webkit-transform: scale(0.3181);
+				width:1920px; 		/* iMac */
+			    height: 1080px;		/* iMac */
+			    transform: scale(0.2181);	
+    			-webkit-transform: scale(0.2181);
 			}
 			#iframe-tablet {
-				width:1200px; 
-			    height: 800px;
+				width:1024px; 		/* iPad */
+			    height: 768px;		/* iPad */
 			    transform: scale(0.3971);
     			-webkit-transform: scale(0.277);
 			}
 			#iframe-mobile {
-				width:400px; 
-			    height: 600px;
-			    transform: scale(0.5);
-    			-webkit-transform: scale(0.5);
+				width:360px; 		/* iPhone 5 multiplied up from 320 W value */
+			    height: 639px;		/* iPhone 5 */
+			    transform: scale(0.45);
+    			-webkit-transform: scale(0.45);
 			}
+
+			/* Classes for Specific Image Transformations */
+			.iMac-desktop-skew {
+				transform:skew(0deg, -1deg) scale(0.58, 0.69) perspective(96px) rotateY(-2deg) rotateX(0deg) rotateZ(0deg) translateX(98px) translateY(-14px);
+			}
+
+			.samsung-mobile-skew {
+				transform:skew(0deg, 0deg) scale(0.69, 0.94) perspective(90px) rotateY(2deg) rotateX(0deg) rotateZ(0deg) translateX(98px) translateY(20px);
+			}
+
+			.iPhone-mobile-skew {
+				transform:skew(0deg, -1deg) scale(0.74, 0.74) perspective(90px) rotateY(1deg) rotateX(0deg) rotateZ(-15deg) translateX(50px) translateY(-13px);
+			}
+
+			.iPad-tablet-skew {
+				transform:skew(1deg, 5deg) scale(0.84, 0.78) perspective(180px) rotateY(2deg) rotateX(6deg) rotateZ(-19deg) translateX(117px) translateY(42px);
+			}
+
+
+
+
+
+
 			#platformWrapper {
 				z-index:999;
 			}
@@ -79,17 +102,17 @@ img, .skewFrame {
 			Slider
 			*/
 			.my-slider {
-				height:420px;
+				height:327px;
 			}
 			.slider-wrapper {
 				position:relative;
 				display:block;
 				margin:auto;
-				width:500px;
+				width:386px;
 				margin-top:-300px;
 			}
 
 			.my-slider li > img{
-				width:500px;
+				width:386px;
 			}
 			
