@@ -30,14 +30,14 @@
 	<body  >
 	<!-- Rivets data template here -->
 	<div class="grid-wrapper websitesInserted container">
-		<div class="row">
+		<div class="flex-container">
 			<div rv-each-item="websites.items">
-				<div class ="itemWrapper col-sm-4">
+				<div class ="flex-item">
 					<div class="item">
 						<img rv-src="item.img">
 						<div class="delete-button"> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></div>
-						<div class="iframeWindow">
-							<iframe rv-src="item.url" class="skewFrame" id="iframe-desktop"></iframe>
+						<div rv-class="item.cls">
+							<iframe rv-src="item.url" class="skewFrame"></iframe>
 						</div>	
 
 					</div>
@@ -71,9 +71,10 @@
 				  	</div>
 				  	<select class="image-picker show-html">
 					  <option value=""></option>
-					  <option data-img-src="img/hamptons.jpg" value="1">Cute Kitten 1</option>
-					  <option data-img-src="img/bizplus.jpg" value="2">Cute Kitten 2</option>
-					  <option data-img-src="img/yoshi.jpg" value="3">Cute Kitten 3</option>
+					  <option data-img-src="img/mac.jpg" data-platform="iMac-desktop-skew iframe-desktop" value="1"></option>
+					  <option data-img-src="img/samsung.jpg" data-platform="samsung-mobile-skew iframe-mobile" value="2"></option>
+					  <option data-img-src="img/iphone.png" data-platform="iPhone-mobile-skew iframe-mobile " value="3"></option>
+					  <option data-img-src="img/ipad.jpg" data-platform="iPad-tablet-skew iframe-tablet" value="4"></option>
 					</select>
 			      <button type="submit" class="btn btn-primary">Submit</button>
 			      </form>

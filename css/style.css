@@ -9,19 +9,19 @@ img, .skewFrame {
     			-webkit-transform-origin: top left;
 			}
 			.grid-item { width: 200px; }
-			#iframe-desktop{
+			.iframe-desktop{
 				width:1920px; 		/* iMac */
 			    height: 1080px;		/* iMac */
 			    transform: scale(0.2181);	
     			-webkit-transform: scale(0.2181);
 			}
-			#iframe-tablet {
+			.iframe-tablet {
 				width:1024px; 		/* iPad */
 			    height: 768px;		/* iPad */
 			    transform: scale(0.3971);
     			-webkit-transform: scale(0.277);
 			}
-			#iframe-mobile {
+			.iframe-mobile {
 				width:360px; 		/* iPhone 5 multiplied up from 320 W value */
 			    height: 639px;		/* iPhone 5 */
 			    transform: scale(0.45);
@@ -38,18 +38,14 @@ img, .skewFrame {
 			}
 
 			.iPhone-mobile-skew {
-				transform:skew(0deg, -1deg) scale(0.74, 0.74) perspective(90px) rotateY(1deg) rotateX(0deg) rotateZ(-15deg) translateX(50px) translateY(-13px);
+				transform:skew(0deg, -1deg) scale(0.28, 0.28) perspective(89px) rotateY(0deg) rotateX(0deg) rotateZ(-16deg) translateX(182px) translateY(-1561px);
 			}
-
+			.iPhone-mobile-skew iframe {
+				height: 540px;
+			}
 			.iPad-tablet-skew {
 				transform:skew(1deg, 5deg) scale(0.84, 0.78) perspective(180px) rotateY(2deg) rotateX(6deg) rotateZ(-19deg) translateX(117px) translateY(42px);
 			}
-
-
-
-
-
-
 			#platformWrapper {
 				z-index:999;
 			}
@@ -59,9 +55,33 @@ img, .skewFrame {
 				margin: auto;
 				display: block;
 				position: relative;
-
 			}
-
+			.flex-container {
+			  padding: 0;
+			  margin: 0;
+			  list-style: none;
+			  
+			  display: -webkit-box;
+			  display: -moz-box;
+			  display: -ms-flexbox;
+			  display: -webkit-flex;
+			  display: flex;
+			  
+			  -webkit-flex-flow: row wrap;
+			  justify-content: space-around;
+			}
+			.flex-item {
+			  background: #5bc0de;
+			  padding: 5px;
+			  width: 300px;
+			  margin-top: 10px;
+			  
+			  line-height: 150px;
+			  color: white;
+			  font-weight: bold;
+			  font-size: 3em;
+			  text-align: center;
+			}
 			.t_input {
 				width:85px;
 			}
@@ -111,12 +131,15 @@ img, .skewFrame {
 			.my-slider li > img{
 				width:386px;
 			}
-
+			
 			/*
 			 * Modal and template
 			 */
 			#modalForm {
 				padding: 1.5rem;
+			}
+			.itemWrapper {
+				position: relative;
 			}
 			.item img {
 				max-width: 100%
@@ -127,8 +150,6 @@ img, .skewFrame {
 			}
 			.iframeWindow {
 				position: absolute;
-				top: 53px;
-    			left: 60px;
 			}
 			.delete-button {
 				position: absolute;

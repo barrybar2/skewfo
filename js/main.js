@@ -1,4 +1,10 @@
 var skewfo = {
+	imageData : {
+		1: 'iMac-desktop-skew',
+		2: 'samsung-mobile-skew',
+		3: 'iPad-tablet-skew',
+		4: 'iPhone-mobile-skew'
+	},
 	websites: [],
 	difference : {
 		value: 0,
@@ -138,20 +144,31 @@ var skewfo = {
 			console.log('here');
 		});
 	},
+	getImageClass: function(img){
+		var returnVal
+		$('.image-picker').children().each(function(index){
+			if($(this).data('img-src') === img){
+				returnVal = $(this).data('platform');
+			}
+		});
+		return returnVal;
+	},
 	submitWebsite: function(){
-		var picker, imageSource, url;
+		var picker, imageSource, url, imgClass;
 				url = $('#websiteInput')[0].value;
 	        	picker = $("select").data('picker').picker;
 	        	imageSource = picker.find('.selected')[0].children[0].getAttribute("src");
-	        	website = new this.websiteObject(url, imageSource);
+	        	imgClass = this.getImageClass(imageSource);
+	        	imgClass = imgClass += " iframeWindow";
+	        	website = new this.websiteObject(url, imageSource, imgClass);
 	        	this.websites.push(website);
 	        	$('#myModal').modal('hide');
 	},
-	websiteObject: function(url, img){
+	websiteObject: function(url, img, cls){
 		this.url = url;
 		this.img = img;
+		this.cls = cls;
 	}
-
 };
 
 
