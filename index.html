@@ -32,10 +32,10 @@
 	<div class="grid-wrapper websitesInserted container">
 		<div class="flex-container">
 			<div rv-each-item="websites.items">
-				<div class ="flex-item">
+				<div class ="flex-item" rv-bgcolor="item.colour">
 					<div class="item">
 						<img rv-src="item.img">
-						<div class="delete-button"> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></div>
+						<!--<div class="delete-button"> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></div>-->
 						<div rv-class="item.cls">
 							<iframe rv-src="item.url" class="skewFrame"></iframe>
 						</div>	
@@ -44,7 +44,8 @@
 				</div>
 			</div>
 		</div>
-		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add website</button>
+		<input type="text" class="form-control" id="usr" >
+		<button type="button" class="btn btn-info btn-lg" onclick="skewfo.submitWebsite()">Add website</button>
 	</div>
 	<!-- Trigger the modal with a button -->
 	

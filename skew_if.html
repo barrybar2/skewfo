@@ -3,7 +3,7 @@
 	<head>
 		<title>View my Site</title>
 
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/tool.css">
 		<link rel="stylesheet" href="css/unslider.css">
 		<link rel="stylesheet" href="css/unslider-dots.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -11,9 +11,13 @@
 		<script>
 		// Slider
 			jQuery(document).ready(function($) {
-				$('.my-slider').unslider({
+
+				setTimeout(function(){ 
+					$('.my-slider').unslider({
 					
-				});
+					});
+				}, 6000);
+				
 			});
 		</script>
 
@@ -27,12 +31,12 @@
 		</div>
 		<h1>View My Site</h1>
 		<input type="text" id="skewInput" value="http://bwmedia.me">
-		<input type="submit" value="submit" onclick="skewfo.inputIframe()">
+		<input type="submit" value="submit" onclick="skewtool.inputIframe()">
 		<br/>
 		<form action="">
-		  <input type="radio" name="platform" value="desktop" checked="checked" onclick="skewfo.setDesktop()"> Desktop
-		  <input type="radio" name="platform" value="mobile" onclick="skewfo.setMobile()"> Mobile
-		  <input type="radio" name="platform" value="tablet" onclick="skewfo.setTablet()"> Tablet
+		  <input type="radio" name="platform" value="desktop" checked="checked" onclick="skewtool.setDesktop()"> Desktop
+		  <input type="radio" name="platform" value="mobile" onclick="skewtool.setMobile()"> Mobile
+		  <input type="radio" name="platform" value="tablet" onclick="skewtool.setTablet()"> Tablet
 		</form>		
 		<div id="platformWrapper">
 			<div id="iframeWrapper">
@@ -44,23 +48,23 @@
 		<div class="slider-wrapper">
 			<div class="my-slider">
 				<ul>
-					<li><img src="img/ipad.jpg" /></li>
-					<li><img src="img/mac.jpg" /></li>
-					<li><img src="img/iphone.png" /></li>
-					<li><img src="img/samsung.jpg" /></li>
+					<li><img src="img/iPad-tablet-skew.png" /></li>
+					<li><img src="img/iMac-desktop-skew.png" /></li>
+					<li><img src="img/iPhone-mobile-skew.png" /></li>
+					<li><img src="img/samsung-mobile-skew.png" /></li>
 				</ul>
 			</div>
 		</div>
 
 		<!-- ROTATE Z AXIS AND Opacity-->
 		<div id="rotateZDiv">
-			<!--<input id="rx" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-2" max="2"/>-->
+			<!--<input id="rx" onMouseMove="skewtool.alterSkew()" type="range" value="0" min="-2" max="2"/>-->
 			<span>Rotate Z</span><span style="margin-left:132px;">Opacity</span><br/>
-			<input id="rz" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-180" max="180"/>
-			<input id="op" onMouseMove="skewfo.alterSkew()" type="range" value="100" min="0" max="100"/>
+			<input id="rz" onMouseMove="skewtool.alterSkew()" type="range" value="0" min="-180" max="180"/>
+			<input id="op" onMouseMove="skewtool.alterSkew()" type="range" value="100" min="0" max="100"/>
 			<br/>
-			<button onClick="skewfo.adjustOne('-', 'i11', 'rz')">-</button><input id="i11" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i11', 'rz')">+</button>
-			<button onClick="skewfo.adjustOne('-', 'i12', 'op')">-</button><input id="i12" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i12', 'op')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i11', 'rz')">-</button><input id="i11" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i11', 'rz')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i12', 'op')">-</button><input id="i12" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i12', 'op')">+</button>
 		</div>
 
 
@@ -69,56 +73,56 @@
 			
 			<span>Move L and R</span><span style="margin-left:62px;">Move Up & Down</span><br/>
 
-			<input id="mx" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-200" max="200"/>
-			<input id="my" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-200" max="200"/>
+			<input id="mx" onMouseMove="skewtool.alterSkew()" type="range" value="0" min="-200" max="200"/>
+			<input id="my" onMouseMove="skewtool.alterSkew()" type="range" value="0" min="-200" max="200"/>
 			<br/>
-			<button onClick="skewfo.adjustOne('-', 'i9', 'mx')">-</button><input id="i9" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i9', 'mx')">+</button>
-			<button onClick="skewfo.adjustOne('-', 'i10', 'my')">-</button><input id="i10" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i10', 'my')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i9', 'mx')">-</button><input id="i9" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i9', 'mx')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i10', 'my')">-</button><input id="i10" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i10', 'my')">+</button>
 		</div>
 		<!-- PERSPECTIVE RESET ASPECT-->
 		<div id="perspectiveDiv">
 			<span>Perspective</span><span style="margin-left:48px;">Aspect</span><br/>
-			<input id="px" onMouseMove="skewfo.alterSkew()" type="range" value="90" min="0" max="180"/>
-			<input id="aspectT" onChange="skewfo.aspectRatioChange()" type="checkbox" checked/>
-			<button onClick="skewfo.reset()">Reset</button>
+			<input id="px" onMouseMove="skewtool.alterSkew()" type="range" value="90" min="0" max="180"/>
+			<input id="aspectT" onChange="skewtool.aspectRatioChange()" type="checkbox" checked/>
+			<button onClick="skewtool.reset()">Reset</button>
 			<br/>
-			<button onClick="skewfo.adjustOne('-', 'i5', 'px')">-</button><input id="i5" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i5', 'px')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i5', 'px')">-</button><input id="i5" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i5', 'px')">+</button>
 			
 		</div>
 
 		<!-- ROTATE Y and X AXIS -->
 		<div id="rotateDiv">
 			<span>Rotate T & B</span><span style="margin-left:92px;">Rotate L & R</span><br/>
-			<input id="rx" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-20" max="20"/>
-			<input id="ry" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-20" max="20"/>
+			<input id="rx" onMouseMove="skewtool.alterSkew()" type="range" value="0" min="-20" max="20"/>
+			<input id="ry" onMouseMove="skewtool.alterSkew()" type="range" value="0" min="-20" max="20"/>
 			<br/>
-			<button onClick="skewfo.adjustOne('-', 'i7', 'rx')">-</button><input id="i7" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i7', 'rx')">+</button>
-			<button onClick="skewfo.adjustOne('-', 'i8', 'ry')">-</button><input id="i8" class="t_input" /><button onClick="skewfo.adjustOne('+', 'i8', 'ry')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i7', 'rx')">-</button><input id="i7" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i7', 'rx')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i8', 'ry')">-</button><input id="i8" class="t_input" /><button onClick="skewtool.adjustOne('+', 'i8', 'ry')">+</button>
 		</div>
 
 		<!-- SKEW INTERFACE -->
 		<div id="skewDiv">
 			<span>Skew L & R</span><span style="margin-left:62px;">Skew Up & Down</span><br/>
-			<input id="sx" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-45" max="45"/>
-			<input id="sy" onMouseMove="skewfo.alterSkew()" type="range" value="0" min="-45" max="45"/>
+			<input id="sx" onMouseMove="skewtool.alterSkew()" type="range" value="0" min="-45" max="45"/>
+			<input id="sy" onMouseMove="skewtool.alterSkew()" type="range" value="0" min="-45" max="45"/>
 			<br/>
-			<button onClick="skewfo.adjustOne('-', 'i1', 'sx')">-</button><input id="i1" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i1', 'sx')">+</button>
-			<button onClick="skewfo.adjustOne('-', 'i2', 'sy')">-</button><input id="i2" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i2', 'sy')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i1', 'sx')">-</button><input id="i1" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i1', 'sx')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i2', 'sy')">-</button><input id="i2" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i2', 'sy')">+</button>
 		</div>
 
 		<!-- SCALE INTERFACE -->
 		<div id="scaleDiv">
 			<span>Scale W</span><span style="margin-left:92px;">Scale H</span><br/>
-			<input id="bx" onMouseMove="skewfo.alterSkew()" type="range" value="100" min="1" max="200"/>
-			<input id="by" onMouseMove="skewfo.alterSkew()" type="range" value="100" min="1" max="200"/>
+			<input id="bx" onMouseMove="skewtool.alterSkew()" type="range" value="100" min="1" max="200"/>
+			<input id="by" onMouseMove="skewtool.alterSkew()" type="range" value="100" min="1" max="200"/>
 			<br/>
-			<button onClick="skewfo.adjustOne('-', 'i3', 'bx')">-</button><input id="i3" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i3', 'bx')">+</button>
-			<button onClick="skewfo.adjustOne('-', 'i4', 'by')">-</button><input id="i4" class="t_input"/><button onClick="skewfo.adjustOne('+', 'i4', 'by')">-</button>
+			<button onClick="skewtool.adjustOne('-', 'i3', 'bx')">-</button><input id="i3" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i3', 'bx')">+</button>
+			<button onClick="skewtool.adjustOne('-', 'i4', 'by')">-</button><input id="i4" class="t_input"/><button onClick="skewtool.adjustOne('+', 'i4', 'by')">-</button>
 		</div>
 	 
 	 	<script src="js/jquery-3.1.0.min.js"></script>
 		<script src="js/unslider-min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/tool.js"></script>
 
 	</body>
 </html>

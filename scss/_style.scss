@@ -1,3 +1,34 @@
+// to run: sass --watch scss/_style.scss:css/style.css
+
+
+@mixin iframe-desktop() {
+  width: 1920px;
+  /* iMac */
+  height: 1080px;
+  /* iMac */
+  // transform: scale(0.2181);
+  // -webkit-transform: scale(0.2181);
+}
+
+@mixin iframe-tablet() {
+  width: 1024px;
+  /* iPad */
+  height: 768px;
+  // /* iPad */
+  // transform: scale(0.3971);
+  // -webkit-transform: scale(0.277);
+}
+
+@mixin iframe-mobile() {
+  width: 360px;
+  /* iPhone 5 multiplied up from 320 W value */
+  height: 639px;
+  // /* iPhone 5 */
+  // transform: scale(0.45);
+  // -webkit-transform: scale(0.45);
+}
+
+
 img, .skewFrame {
   left: 28px;
   top: 38px;
@@ -6,45 +37,48 @@ img, .skewFrame {
   overflow: hidden;
   border-width: 0px;
   transform-origin: top left;
-  -webkit-transform-origin: top left; }
+  -webkit-transform-origin: top left;
+} 
 
 .grid-item {
-  width: 200px; }
+  width: 200px;
+}
+
 
 /* Classes for Specific Image Transformations */
+
 .iMac-desktop-skew {
   transform: skew(4deg, -3deg) scale(0.58, 0.69) perspective(88px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateX(-1279px) translateY(-600px);
-  width: 1920px;
-  /* iMac */
-  height: 1080px;
-  /* iMac */ }
-  .iMac-desktop-skew iframe {
-    height: 177px; }
+  @include iframe-desktop();
+  iframe {
+  	height: 177px;
+  }
+}
 
 .samsung-mobile-skew {
   transform: skew(-15deg, 17deg) scale(0.28, 0.28) perspective(87px) rotateY(0deg) rotateX(0deg) rotateZ(-16deg) translateX(-138px) translateY(-1483px);
-  width: 360px;
-  /* iPhone 5 multiplied up from 320 W value */
-  height: 639px; }
-  .samsung-mobile-skew iframe {
-    height: 660px; }
+  @include iframe-mobile();
+  iframe{
+  	height: 660px;
+  }
+}
 
 .iPhone-mobile-skew {
   transform: skew(0deg, -1deg) scale(0.28, 0.28) perspective(89px) rotateY(0deg) rotateX(0deg) rotateZ(-16deg) translateX(182px) translateY(-1561px);
-  width: 360px;
-  /* iPhone 5 multiplied up from 320 W value */
-  height: 639px; }
-  .iPhone-mobile-skew iframe {
-    height: 540px; }
+  @include iframe-mobile();
+  iframe {
+    height: 540px;
+  }
+}
 
 .iPad-tablet-skew {
   transform: skew(-7deg, 3deg) scale(0.9, 0.78) perspective(213px) rotateY(0deg) rotateX(6deg) rotateZ(-29deg) translateX(-169px) translateY(-923px);
-  width: 1024px;
-  /* iPad */
-  height: 768px; }
-  .iPad-tablet-skew iframe {
+  @include iframe-tablet();
+  iframe {
     height: 351px;
-    width: 252px; }
+    width: 252px;
+  }
+}
 
 #platformWrapper {
   z-index: 999;
@@ -52,14 +86,16 @@ img, .skewFrame {
   height: 300px;
   margin: auto;
   display: block;
-  position: relative; }
+  position: relative;
+}
 
 #iframeWrapper {
   width: 500px;
   height: 300px;
   margin: auto;
   display: block;
-  position: relative; }
+  position: relative;
+}
 
 .flex-container {
   padding: 0;
@@ -71,7 +107,8 @@ img, .skewFrame {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
-  justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .flex-item {
   padding-top: 5px;
@@ -81,33 +118,40 @@ img, .skewFrame {
   color: white;
   font-weight: bold;
   font-size: 3em;
-  text-align: center; }
+  text-align: center;
+}
 
 .t_input {
-  width: 85px; }
+  width: 85px;
+}
 
 /*
  * Modal and template
  */
+
 #modalForm {
-  padding: 1.5rem; }
+  padding: 1.5rem;
+}
 
 .itemWrapper {
-  position: relative; }
+  position: relative;
+}
 
 .item {
+  img {
+    max-width: 100%;
+  }
   position: relative;
-  margin: 10px; }
-  .item img {
-    max-width: 100%; }
+  margin: 10px;
+}
 
 .iframeWindow {
   position: absolute;
-  pointer-events: none; }
+  pointer-events: none;
+}
 
 .delete-button {
   position: absolute;
   top: 0;
-  right: 0; }
-
-/*# sourceMappingURL=style.css.map */
+  right: 0;
+}

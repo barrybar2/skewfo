@@ -1,0 +1,160 @@
+/* This file needs to be deleted!! */
+img, .skewFrame {
+        left: 28px;
+          top: 38px;
+          display:block; 
+          margin:auto;
+          overflow:hidden;
+            border-width: 0px;
+          transform-origin: top left;
+          -webkit-transform-origin: top left;
+      }
+      .grid-item { width: 200px; }
+      .iframe-desktop{
+        width:1920px;     /* iMac */
+          height: 1080px;   /* iMac */
+          transform: scale(0.2181); 
+          -webkit-transform: scale(0.2181);
+      }
+      .iframe-tablet {
+        width:1024px;     /* iPad */
+          height: 768px;    /* iPad */
+          transform: scale(0.3971);
+          -webkit-transform: scale(0.277);
+      }
+      .iframe-mobile {
+        width:360px;    /* iPhone 5 multiplied up from 320 W value */
+          height: 639px;    /* iPhone 5 */
+          transform: scale(0.45);
+          -webkit-transform: scale(0.45);
+      }
+
+      /* Classes for Specific Image Transformations */
+      .iMac-desktop-skew {
+        transform:skew(0deg, -1deg) scale(0.58, 0.69) perspective(96px) rotateY(-2deg) rotateX(0deg) rotateZ(0deg) translateX(98px) translateY(-14px);
+      }
+
+      .samsung-mobile-skew {
+        transform:skew(0deg, 0deg) scale(0.69, 0.94) perspective(90px) rotateY(2deg) rotateX(0deg) rotateZ(0deg) translateX(98px) translateY(20px);
+      }
+
+      .iPhone-mobile-skew {
+        transform:skew(0deg, -1deg) scale(0.28, 0.28) perspective(89px) rotateY(0deg) rotateX(0deg) rotateZ(-16deg) translateX(182px) translateY(-1561px);
+      }
+      .iPhone-mobile-skew iframe {
+        height: 540px;
+      }
+      .iPad-tablet-skew {
+        transform:skew(1deg, 5deg) scale(0.84, 0.78) perspective(180px) rotateY(2deg) rotateX(6deg) rotateZ(-19deg) translateX(117px) translateY(42px);
+      }
+      #platformWrapper {
+        z-index:999;
+      }
+      #platformWrapper, #iframeWrapper {
+        width: 500px;
+        height: 300px;
+        margin: auto;
+        display: block;
+        position: relative;
+      }
+      .flex-container {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        
+        -webkit-flex-flow: row wrap;
+        justify-content: space-around;
+      }
+      .flex-item {
+        background: #5bc0de;
+        padding: 5px;
+        width: 300px;
+        margin-top: 10px;
+        
+        line-height: 150px;
+        color: white;
+        font-weight: bold;
+        font-size: 3em;
+        text-align: center;
+      }
+      .t_input {
+        width:85px;
+      }
+
+      #skewDiv, #scaleDiv {
+        background:coral; 
+        position:fixed;
+      }
+
+      #skewDiv {
+        bottom:0px; left:0px;  position:fixed;
+      }
+      #scaleDiv {
+        bottom:0px; right:0px;  position:fixed;
+      }
+      #perspectiveDiv {
+        background:lime;
+        bottom:70px; right:0px;  position:fixed;
+      }
+      #rotateDiv {
+        background:lime;
+        bottom:70px; left:0px;  position:fixed;
+      }
+      #translateDiv {
+        background:pink;  position:fixed;
+        bottom:0px; left:50%; margin-left:-60px;
+      }
+      #rotateZDiv {
+        background:lime;  position:fixed;
+        bottom:70px; left:50%; margin-left:-60px;
+      }
+
+      /*
+      Slider
+      */
+      .my-slider {
+        height:327px;
+      }
+      .slider-wrapper {
+        position:relative;
+        display:block;
+        margin:auto;
+        width:386px;
+        margin-top:-300px;
+      }
+
+      .my-slider li > img{
+        width:386px;
+      }
+      
+      /*
+       * Modal and template
+       */
+      #modalForm {
+        padding: 1.5rem;
+      }
+      .itemWrapper {
+        position: relative;
+      }
+      .item img {
+        max-width: 100%
+      }
+      .item {
+        position: relative;
+        margin: 10px;
+      }
+      .iframeWindow {
+        position: absolute;
+      }
+      .delete-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      
